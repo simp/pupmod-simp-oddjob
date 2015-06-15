@@ -1,0 +1,5 @@
+---
+fixtures:
+  symlinks:
+    oddjob: "#{source_dir}"
+    common: "#{source_dir}/../common"
