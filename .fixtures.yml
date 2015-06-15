@@ -1,5 +1,6 @@
 ---
 fixtures:
+  repositories:
+    common: 'git://github.com/simp/pupmod-simp-common'
   symlinks:
     oddjob: "#{source_dir}"
-    common: "#{source_dir}/../common"
