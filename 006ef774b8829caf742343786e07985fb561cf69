@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "facab960_f5b9027a",
+        "filename": "README.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1005194
+      },
+      "writtenOn": "2015-06-16T14:47:41Z",
+      "side": 1,
+      "message": "This should point at simp I think.",
+      "range": {
+        "startLine": 1,
+        "startChar": 39,
+        "endLine": 1,
+        "endChar": 49
+      },
+      "revId": "006ef774b8829caf742343786e07985fb561cf69",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
+    }
+  ]
+}
