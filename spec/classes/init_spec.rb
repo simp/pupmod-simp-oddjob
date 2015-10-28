@@ -1,18 +1,26 @@
 require 'spec_helper'
 
 describe 'oddjob' do
-  let(:facts) {{
-    :fqdn => 'test.host.net',
-    :hardwaremodel => 'x86_64',
-    :processorcount => 4,
-    :interfaces => 'lo',
-    :ipaddress_lo => '127.0.0.1',
-    :operatingsystem => 'RedHat'
-  }}
+  context 'supported operating systems' do
+    on_supported_os.each do |os, facts|
+      let(:facts) do
+        facts
+      end
 
-  it { should create_class('oddjob') }
-  it { should compile.with_all_deps }
+      context "on #{os}" do
+        it { is_expected.to compile.with_all_deps }
+        it { is_expected.to create_class('oddjob') }
+      end
 
-  it { should create_package('oddjob') }
-  it { should create_service('oddjobd').that_requires('Package[oddjob]') }
+      context 'base' do
+        it { is_expected.to create_package('oddjob').with( :ensure => 'latest')}
+        it { is_expected.to contain_service('oddjobd').with({
+          :ensure  => 'running',
+          :enable  => true,
+          :require => 'Package[oddjob]'
+          })
+        }
+      end
+    end
+  end
 end
