@@ -1,0 +1,106 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9ab29df4_e500bcac",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1005194
+      },
+      "writtenOn": "2015-10-29T19:30:58Z",
+      "side": 1,
+      "message": "This needs an opening paren",
+      "revId": "4f31cad92f1a48db4adc46494648fd70c1aaffda",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9ab29df4_2532b4a7",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1005194
+      },
+      "writtenOn": "2015-10-29T19:30:58Z",
+      "side": 1,
+      "message": "You need to add in SIMP-578 #close (or #comment)",
+      "revId": "4f31cad92f1a48db4adc46494648fd70c1aaffda",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9ab29df4_4527a864",
+        "filename": "metadata.json",
+        "patchSetId": 1
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1005194
+      },
+      "writtenOn": "2015-10-29T19:30:58Z",
+      "side": 1,
+      "message": "This file is not complete",
+      "revId": "4f31cad92f1a48db4adc46494648fd70c1aaffda",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9ab29df4_25d9d457",
+        "filename": "spec/classes/init_spec.rb",
+        "patchSetId": 1
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 1005194
+      },
+      "writtenOn": "2015-10-29T19:30:58Z",
+      "side": 1,
+      "message": "This does not need to be included anymore.",
+      "revId": "4f31cad92f1a48db4adc46494648fd70c1aaffda",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9ab29df4_45dec840",
+        "filename": "spec/classes/mkhomedir_spec.rb",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1005194
+      },
+      "writtenOn": "2015-10-29T19:30:58Z",
+      "side": 1,
+      "message": "Here as well.",
+      "revId": "4f31cad92f1a48db4adc46494648fd70c1aaffda",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9ab29df4_65e3cc07",
+        "filename": "spec/spec_helper.rb",
+        "patchSetId": 1
+      },
+      "lineNbr": 121,
+      "author": {
+        "id": 1005194
+      },
+      "writtenOn": "2015-10-29T19:30:58Z",
+      "side": 1,
+      "message": "Whitespace.",
+      "revId": "4f31cad92f1a48db4adc46494648fd70c1aaffda",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
+    }
+  ]
+}
