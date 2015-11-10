@@ -1,7 +1,7 @@
 Summary: OddJob Puppet Module
 Name: pupmod-oddjob
 Version: 1.0.0
-Release: 1
+Release: 2
 License: Apache License, Version 2.0
 Group: Applications/System
 Source: %{name}-%{version}-%{release}.tar.gz
@@ -52,6 +52,9 @@ fi
 # Post uninstall stuff
 
 %changelog
+* Mon Nov 09 2015 Chris Tessmer <chris.tessmer@onypoint.com> - 1.0.0-2
+- migration to simplib and simpcat (lib/ only)
+
 * Fri Jan 16 2015 Trevor Vaughan <tvaughan@onyxpoint.com> - 1.0.0-1
 - Changed puppet-server requirement to puppet
 
