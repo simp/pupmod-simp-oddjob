@@ -11,6 +11,8 @@
 class oddjob::mkhomedir (
   $umask = '0027'
 ) {
+  validate_umask($umask)
+
   include 'oddjob'
 
   package { 'oddjob-mkhomedir': ensure => 'latest' }
@@ -22,6 +24,4 @@ class oddjob::mkhomedir (
     notify  => Service['oddjobd'],
     content => template("${module_name}/etc/oddjobd.conf.d/oddjobd-mkhomedir.conf.erb")
   }
-
-  validate_umask($umask)
 }

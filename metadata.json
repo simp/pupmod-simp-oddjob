@@ -1,13 +1,13 @@
 {
-  "name":    "pupmod-simp-oddjob",
+  "name":    "simp-oddjob",
   "version": "1.0.0",
-  "author":  "SIMP Team",
-  "summary": "Safely manages oddjob",
+  "author":  "simp",
+  "summary": "Basic management for OddJob",
   "license": "Apache-2.0",
   "source":  "https://github.com/simp/pupmod-simp-oddjob",
   "project_page": "https://github.com/simp/pupmod-simp-oddjob",
   "issues_url":   "https://simp-project.atlassian.net",
-  "tags": [ "simp","oddjob" ],
+  "tags": [ "simp", "oddjob", "home-directories" ],
   "dependencies": [
     {
       "name": "puppetlabs-stdlib",
