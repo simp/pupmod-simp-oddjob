@@ -12,10 +12,10 @@ describe 'oddjob::mkhomedir' do
 
   let(:params) {{ :umask => '0027' }}
 
-  it { should create_class('oddjob') }
-  it { should compile.with_all_deps }
+  it { is_expected.to create_class('oddjob') }
+  it { is_expected.to compile.with_all_deps }
 
-  it { should create_package('oddjob-mkhomedir') }
-  it { should create_file('/etc/oddjobd.conf.d/oddjobd-mkhomedir.conf').that_notifies('Service[oddjobd]') }
-  it { should create_file('/etc/oddjobd.conf.d/oddjobd-mkhomedir.conf').with_content(/-u #{params[:umask]}/) }
+  it { is_expected.to create_package('oddjob-mkhomedir') }
+  it { is_expected.to create_file('/etc/oddjobd.conf.d/oddjobd-mkhomedir.conf').that_notifies('Service[oddjobd]') }
+  it { is_expected.to create_file('/etc/oddjobd.conf.d/oddjobd-mkhomedir.conf').with_content(/-u #{params[:umask]}/) }
 end

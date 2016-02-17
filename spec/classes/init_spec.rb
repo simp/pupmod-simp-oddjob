@@ -10,9 +10,9 @@ describe 'oddjob' do
     :operatingsystem => 'RedHat'
   }}
 
-  it { should create_class('oddjob') }
-  it { should compile.with_all_deps }
+  it { is_expected.to create_class('oddjob') }
+  it { is_expected.to compile.with_all_deps }
 
-  it { should create_package('oddjob') }
-  it { should create_service('oddjobd').that_requires('Package[oddjob]') }
+  it { is_expected.to create_package('oddjob') }
+  it { is_expected.to create_service('oddjobd').that_requires('Package[oddjob]') }
 end
