@@ -9,7 +9,7 @@ Buildroot: %{_tmppath}/%{name}-%{version}-%{release}-buildroot
 Requires: puppet >= 3.3.0
 Buildarch: noarch
 Requires: simp-bootstrap >= 4.2.0
-Requires: pupmod-simp-simplib >= 1.0.0
+Requires: pupmod-simplib >= 1.0.0
 Obsoletes: pupmod-oddjob-test
 
 Prefix:"/etc/puppet/environments/simp/modules"
