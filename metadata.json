@@ -10,11 +10,11 @@
   "tags": [ "simp", "oddjob", "home-directories" ],
   "dependencies": [
     {
-      "name": "puppetlabs-stdlib",
+      "name": "puppetlabs/stdlib",
       "version_requirement": ">= 4.1.0"
     },
     {
-      "name": "simp-simplib",
+      "name": "simp/simplib",
       "version_requirement": ">= 1.0.0"
     }
   ],
