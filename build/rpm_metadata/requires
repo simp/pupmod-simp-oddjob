@@ -1,0 +1,2 @@
+Requires: pupmod-simplib >= 1.0.0
+Obsoletes: pupmod-oddjob-test >= 0.0.1
