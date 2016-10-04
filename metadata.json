@@ -1,21 +1,25 @@
 {
-  "name":    "simp-oddjob",
-  "version": "1.0.0",
-  "author":  "simp",
+  "name": "simp-oddjob",
+  "version": "1.0.1",
+  "author": "simp",
   "summary": "Basic management for OddJob",
   "license": "Apache-2.0",
-  "source":  "https://github.com/simp/pupmod-simp-oddjob",
+  "source": "https://github.com/simp/pupmod-simp-oddjob",
   "project_page": "https://github.com/simp/pupmod-simp-oddjob",
-  "issues_url":   "https://simp-project.atlassian.net",
-  "tags": [ "simp", "oddjob", "home-directories" ],
+  "issues_url": "https://simp-project.atlassian.net",
+  "tags": [
+    "simp",
+    "oddjob",
+    "home-directories"
+  ],
   "dependencies": [
     {
       "name": "puppetlabs/stdlib",
-      "version_requirement": ">= 4.1.0"
+      "version_requirement": ">= 4.9.0 < 5.0.0"
     },
     {
       "name": "simp/simplib",
-      "version_requirement": ">= 1.0.0"
+      "version_requirement": ">= 1.3.1 < 2.0.0"
     }
   ],
   "operatingsystem_support": [
