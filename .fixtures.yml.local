@@ -1,5 +1,0 @@
---- 
-  fixtures: 
-    symlinks: 
-      oddjob: "#{source_dir}"
-      simplib: "#{source_dir}/../simplib"
