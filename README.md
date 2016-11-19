@@ -61,7 +61,7 @@ classes:
 - oddjob
 - oddjob::mkhomdir
 oddjob::mkhomedir::umask: '0077'
-``` 
+```
 
 ## Reference
 
