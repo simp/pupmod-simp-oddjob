@@ -9,7 +9,7 @@
 # * Trevor Vaughan <tvaughan@onyxpoint.com>
 #
 class oddjob::mkhomedir (
-  $umask = '0027'
+  String   $umask = '0027'
 ) {
   validate_umask($umask)
 
@@ -22,6 +22,6 @@ class oddjob::mkhomedir (
     group   => 'root',
     mode    => '0644',
     notify  => Service['oddjobd'],
-    content => template("${module_name}/etc/oddjobd.conf.d/oddjobd-mkhomedir.conf.erb")
+    content => template('etc/oddjobd.conf.d/oddjobd-mkhomedir.conf.erb')
   }
 }
