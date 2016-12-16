@@ -22,6 +22,6 @@ class oddjob::mkhomedir (
     group   => 'root',
     mode    => '0644',
     notify  => Service['oddjobd'],
-    content => template('etc/oddjobd.conf.d/oddjobd-mkhomedir.conf.erb')
+    content => template('oddjob/etc/oddjobd.conf.d/oddjobd-mkhomedir.conf.erb')
   }
 }
