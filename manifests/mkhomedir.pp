@@ -1,15 +1,13 @@
-# == Class: oddjob::mkhomedir
+# class oddjob::mkhomedir
 #
 # This configures the oddjob-mkhomedir
 #
-# == Parameters
+# @param umask
 #
-# == Authors
-#
-# * Trevor Vaughan <tvaughan@onyxpoint.com>
+# @author Trevor Vaughan <tvaughan@onyxpoint.com>
 #
 class oddjob::mkhomedir (
-  $umask = '0027'
+  Simplib::Umask $umask = '0027'
 ) {
   validate_umask($umask)
 
@@ -22,6 +20,6 @@ class oddjob::mkhomedir (
     group   => 'root',
     mode    => '0644',
     notify  => Service['oddjobd'],
-    content => template("${module_name}/etc/oddjobd.conf.d/oddjobd-mkhomedir.conf.erb")
+    content => template('oddjob/etc/oddjobd.conf.d/oddjobd-mkhomedir.conf.erb')
   }
 }
