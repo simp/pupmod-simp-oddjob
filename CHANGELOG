@@ -1,3 +1,6 @@
+* Thu Jul 06 2017 Liz Nemsick <lnemsick.simp@gmail.com> - 2.0.1-0
+- Confine puppet version in metadata.json
+
 * Wed Nov 23 2016 Jeanne Greulich <jgreulich@onyxpoint.com> - 2.0.0-0
 - Bump major version for SIMP 6.0
 
