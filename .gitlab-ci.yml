@@ -94,4 +94,5 @@ acceptance-test:
     - beaker
   script: 
     - bundle install --no-binstubs --path=vendor
-    - bundle exec rake acceptance
+    - bundle exec rake beaker:suites
+

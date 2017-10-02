@@ -9,9 +9,6 @@ describe 'oddjob class' do
     EOS
   }
 
-  # We need this for our tests to run properly!
-  on 'client', puppet('config set stringify_facts false')
-
   context 'with defaults' do
 
     # Using puppet_apply as a helper
