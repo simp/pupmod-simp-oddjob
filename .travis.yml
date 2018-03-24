@@ -26,7 +26,7 @@ before_install:
 
 jobs:
   include:
-    - stage: spec
+    - stage: check
       rvm: 2.4.1
       env: STRICT_VARIABLES=yes TRUSTED_NODE_DATA=yes PUPPET_VERSION="~> 5"
       script:
@@ -34,7 +34,9 @@ jobs:
         - bundle exec rake check:test_file
         - bundle exec rake pkg:check_version
         - bundle exec rake metadata_lint
-        - bundle exec rake compare_latest_tag
+        - bundle exec rake pkg:compare_latest_tag
+        - bundle exec rake pkg:create_tag_changelog
+        - bundle exec rake lint
         - bundle exec puppet module build
 
     - stage: spec
@@ -61,7 +63,6 @@ jobs:
       script:
         - bundle exec rake spec
 
-    # This needs to be last since we have an acceptance test
     - stage: deploy
       rvm: 2.4.1
       script:
@@ -69,6 +70,7 @@ jobs:
       before_deploy:
         - "export PUPMOD_METADATA_VERSION=`ruby -r json -e \"puts JSON.parse(File.read('metadata.json')).fetch('version')\"`"
         - '[[ $TRAVIS_TAG =~ ^simp-${PUPMOD_METADATA_VERSION}$|^${PUPMOD_METADATA_VERSION}$ ]]'
+
       deploy:
         - provider: releases
           api_key:
@@ -81,7 +83,3 @@ jobs:
           user: simp
           password:
             secure: "sKbvgx/AZWB3C/m3vJ21cfrgvm4Xy0iFyzQ24hY1/Yhd17vBPFC3sb2QaZfM5tMqY+zo+kECIBX7U4FdZnCGG6OHoCsmstypS86jbOuc+gP0MD/VbMYEh7WzkiEkTqAJ3eOvSZHLGjHQhT3r7juzo1otnpSv4E/7Rm3TmrUKP5EhWu3YKgOQUPG47ipuuX0/yLBmKYg/4QDxHv0H/DyPSyO0KrgSsykPURvHhYT7seAe219fOm6xZZ6bJDdKwroMOHwrdUu4Jvwl94PdOSKcN8+/GaZUI+neY43L6P2BaEUPnjT3VrAuautZo1IlIK3PLZ/lLQcyugWw09eINPmX5fHnUHqzj3IO0JQ04+0MOIpcbnDe2Oujqm3eQqeZJN/+VoFNtlBQmkvKWgVki+C90Lj7ttsJRIkQFohjiTgzIpoyACIgo1DSLkbtsMEQNujvft5Kk8HLzMKpZ2LZuEuFWwkfmFoAhfWo6mk7Q7p0kaFcyUuSCZ1BjI8QtjWHrvcC/cFjrt553FJ/+eSFdM0vkP8SFdkeZuo83ocBrGKVP20qaE64Rymuw+HoN/EXjI3CILrr4rnWOoJTgnT6SfpiGKlBJgpgWjESFHbd7y4Xf6LepeFjy7P4Ir2LtwiVUYWsDSE222wy6jLnRibV9a/GjEiUXkouqURP9FCz2TkBnB4="
-          on:
-            tags: true
-            rvm: 2.4.1
-            condition: '($SKIP_FORGE_PUBLISH != true)'
