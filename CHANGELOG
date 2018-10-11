@@ -1,3 +1,8 @@
+* Thu Oct 11 2018 Nick Miller <nick.miller@onyxpoint.com> - 2.1.0-0
+- Added $package_ensure and $oddbob::mkhomedir::package_ensure parameter
+  - Changed the packages from 'latest' to 'installed'
+  - It will also respect `simp_options::package_ensure`
+
 * Fri Mar 23 2018 Trevor Vaughan <tvaughan@onyxpoint.com> - 2.0.2-0
 - Add support for Puppet 5 and OEL
 

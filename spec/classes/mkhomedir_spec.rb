@@ -1,17 +1,14 @@
 require 'spec_helper'
 
 describe 'oddjob::mkhomedir' do
-  context 'supported operating systems' do
-    on_supported_os.each do |os, facts|
+  on_supported_os.each do |os, facts|
+    let(:facts) do
+      facts
+    end
 
-      let(:facts) do
-        facts
-      end
-
-      context "on #{os}" do
-        it { is_expected.to create_class('oddjob::mkhomedir') }
-        it { is_expected.to compile.with_all_deps }
-      end
+    context "on #{os}" do
+      it { is_expected.to create_class('oddjob::mkhomedir') }
+      it { is_expected.to compile.with_all_deps }
 
       context 'with umask 0117' do
         let(:params) {{ :umask => '0117' }}
