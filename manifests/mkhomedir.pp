@@ -4,16 +4,21 @@
 #
 # @param umask
 #
+# @param package_ensure The ensure status of packages to be managed
+#
 # @author Trevor Vaughan <tvaughan@onyxpoint.com>
 #
 class oddjob::mkhomedir (
-  Simplib::Umask $umask = '0027'
+  Simplib::Umask $umask          = '0027',
+  String         $package_ensure = simplib::lookup('simp_options::package_ensure', { 'default_value' => 'installed' })
 ) {
   validate_umask($umask)
 
   include 'oddjob'
 
-  package { 'oddjob-mkhomedir': ensure => 'latest' }
+  package { 'oddjob-mkhomedir':
+    ensure => $package_ensure
+  }
 
   file { '/etc/oddjobd.conf.d/oddjobd-mkhomedir.conf':
     owner   => 'root',
