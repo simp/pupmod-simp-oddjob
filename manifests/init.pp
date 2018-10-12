@@ -2,9 +2,9 @@
 # provides for an entry point to other oddjob functions and
 # configuration.
 #
-# @param package_ensure The ensure status of packages to be managed
+# @param package_ensure The ensure status of package to be managed
 #
-# @author Trevor Vaughan <tvaughan@onyxpoint.com>
+# @author https://github.com/simp/pupmod-simp-oddjob/graphs/contributors
 #
 class oddjob (
   String $package_ensure = simplib::lookup('simp_options::package_ensure', { 'default_value' => 'installed' })
