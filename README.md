@@ -1,4 +1,8 @@
-[![License](http://img.shields.io/:license-apache-blue.svg)](http://www.apache.org/licenses/LICENSE-2.0.html) [![Build Status](https://travis-ci.org/simp/pupmod-simp-oddjob.svg)](https://travis-ci.org/simp/pupmod-simp-oddjob) [![SIMP compatibility](https://img.shields.io/badge/SIMP%20compatibility-4.2.*%2F5.1.*-orange.svg)](https://img.shields.io/badge/SIMP%20compatibility-4.2.*%2F5.1.*-orange.svg)
+[![License](https://img.shields.io/:license-apache-blue.svg)](http://www.apache.org/licenses/LICENSE-2.0.html)
+[![CII Best Practices](https://bestpractices.coreinfrastructure.org/projects/73/badge)](https://bestpractices.coreinfrastructure.org/projects/73)
+[![Puppet Forge](https://img.shields.io/puppetforge/v/simp/oddjob.svg)](https://forge.puppetlabs.com/simp/oddjob)
+[![Puppet Forge Downloads](https://img.shields.io/puppetforge/dt/simp/oddjob.svg)](https://forge.puppetlabs.com/simp/oddjob)
+[![Build Status](https://travis-ci.org/simp/pupmod-simp-oddjob.svg)](https://travis-ci.org/simp/pupmod-simp-oddjob)
 
 # oddjob
 
@@ -90,8 +94,7 @@ Linux-compatible distribution.
 
 ## Development
 
-Please read our [Contribution Guide](https://simp-project.atlassian.net/wiki/display/SD/Contributing+to+SIMP)
-and visit our [Developer Wiki](https://simp-project.atlassian.net/wiki/display/SD/SIMP+Development+Home)
+Please read our [Contribution Guide](http://simp-doc.readthedocs.io/en/stable/contributors_guide/index.html).
 
 If you find any issues, they can be submitted to our
 [JIRA](https://simp-project.atlassian.net).
