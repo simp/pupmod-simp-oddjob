@@ -1,3 +1,7 @@
+* Tue Feb 12 2019 Liz Nemsick <lnemsick-simp@gmail.com> - 2.1.1-0
+- Remove unnecessary use of validate_umask(), a deprecated simplib
+  Puppet 3 function.
+
 * Tue Nov 06 2018 Liz Nemsick <lnemsick-simp@gmail.com> - 2.1.0-0
 - Update to onyxpoint OEL boxes in acceptance tests
 - Update badges and contribution guide URL in README.md

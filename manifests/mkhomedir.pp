@@ -12,8 +12,6 @@ class oddjob::mkhomedir (
   Simplib::Umask $umask          = '0027',
   String         $package_ensure = simplib::lookup('simp_options::package_ensure', { 'default_value' => 'installed' })
 ) {
-  validate_umask($umask)
-
   include 'oddjob'
 
   package { 'oddjob-mkhomedir':
