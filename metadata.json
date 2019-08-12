@@ -1,6 +1,6 @@
 {
   "name": "simp-oddjob",
-  "version": "2.1.2",
+  "version": "2.2.0",
   "author": "SIMP Team",
   "summary": "Basic management for OddJob",
   "license": "Apache-2.0",
@@ -48,7 +48,7 @@
   "requirements": [
     {
       "name": "puppet",
-      "version_requirement": ">= 4.7.0 < 7.0.0"
+      "version_requirement": ">= 5.0.0 < 7.0.0"
     }
   ]
 }
