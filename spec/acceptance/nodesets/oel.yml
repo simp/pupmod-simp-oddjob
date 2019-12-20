@@ -6,25 +6,28 @@
   end
 -%>
 HOSTS:
-  el6:
+  oel7:
     roles:
       - default
-      - master
-      - client
-    platform:   el-6-x86_64
-    box:        onyxpoint/oel-6-x86_64
+    platform: el-7-x86_64
+    box: onyxpoint/oel-6-x86_64
     hypervisor: <%= hypervisor %>
 
-  el7:
-    roles:
-      - client
-    platform:   el-7-x86_64
-    box:        onyxpoint/oel-7-x86_64
+  oel6:
+    platform: el-6-x86_64
+    box: generic/oracle7
+    hypervisor: <%= hypervisor %>
+
+  oel8:
+    platform: el-8-x86_64
+    box: generic/oracle8
     hypervisor: <%= hypervisor %>
 
 CONFIG:
   log_level: verbose
   type: aio
-<% if ENV['BEAKER_PUPPET_COLLECTION'] -%>
-  puppet_collection: <%= ENV['BEAKER_PUPPET_COLLECTION'] %>
+  vagrant_memsize: 256
+  synced_folder: disabled
+<% if ENV['BEAKER_PUPPET_ENVIRONMENT'] -%>
+  puppet_environment: <%= ENV['BEAKER_PUPPET_ENVIRONMENT'] %>
 <% end -%>
