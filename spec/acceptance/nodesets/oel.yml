@@ -10,12 +10,12 @@ HOSTS:
     roles:
       - default
     platform: el-7-x86_64
-    box: onyxpoint/oel-6-x86_64
+    box: generic/oracle7
     hypervisor: <%= hypervisor %>
 
   oel6:
     platform: el-6-x86_64
-    box: generic/oracle7
+    box: onyxpoint/oel-6-x86_64
     hypervisor: <%= hypervisor %>
 
   oel8:
