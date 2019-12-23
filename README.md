@@ -8,21 +8,27 @@
 
 #### Table of Contents
 
-1. [Module Description - What the module does and why it is useful](#module-description)
-2. [Setup - The basics of getting started with oddjob](#setup)
-    * [What oddjob affects](#what-oddjob-affects)
-    * [Setup requirements](#setup-requirements)
-    * [Beginning with oddjob](#beginning-with-oddjob)
-3. [Usage - Configuration options and additional functionality](#usage)
-4. [Reference](#reference)
-5. [Limitations - OS compatibility, etc.](#limitations)
-6. [Development - Guide for contributing to the module](#development)
-7. [Acceptance Tests](#acceptance-tests)
+<!-- vim-markdown-toc GFM -->
+
+* [Module Description](#module-description)
+* [Setup](#setup)
+  * [What oddjob affects](#what-oddjob-affects)
+  * [Setup Requirements](#setup-requirements)
+  * [Beginning with oddjob](#beginning-with-oddjob)
+* [Usage](#usage)
+  * [I want to set default user umask for home directories](#i-want-to-set-default-user-umask-for-home-directories)
+* [Limitations](#limitations)
+* [Development](#development)
+* [Acceptance tests](#acceptance-tests)
+
+<!-- vim-markdown-toc -->
 
 ## Module Description
 
 This module ensures the oddjobd package is installed, service is running and
 configures oddjob-mkhomedir.
+
+See [REFERENCE.md](./REFERENCE.md) for API details.
 
 ## Setup
 
@@ -42,50 +48,20 @@ enforcing umask.
 include 'oddjob'
 ```
 
-or
-
-```yaml
-classes:
-- oddjob
-```
-
 ## Usage
 
 ### I want to set default user umask for home directories
 
 ```puppet
 include 'oddjob'
-class {'oddjob::mkhomedir': umask => '0077'}
+include 'oddjob::mkhomdir'
 ```
 
-or
+With Hieradata:
 
 ```yaml
-classes:
-- oddjob
-- oddjob::mkhomdir
 oddjob::mkhomedir::umask: '0077'
 ```
-
-## Reference
-
-### Classes
-
-#### Public Classes
-
-* `oddjob`
-* `oddjob::mkhomedir`
-
-### Class: `oddjob`
-
-This class has no options or parameters
-
-### Class: `oddjob::mkhomedir`
-
-#### Parameters
-
-* `umask`: Sets the default umask for new users on the system. Valid Options:
-Any valid umask. Default: '0027'
 
 ## Limitations
 
