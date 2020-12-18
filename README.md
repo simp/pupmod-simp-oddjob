@@ -54,7 +54,7 @@ include 'oddjob'
 
 ```puppet
 include 'oddjob'
-include 'oddjob::mkhomdir'
+include 'oddjob::mkhomedir'
 ```
 
 With Hieradata:
