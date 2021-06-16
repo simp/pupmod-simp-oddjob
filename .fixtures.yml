@@ -1,6 +1,6 @@
 ---
 fixtures:
   repositories:
-    simplib: https://github.com/simp/pupmod-simp-simplib
+    simplib: https://github.com/simp/pupmod-simp-simplib.git
   symlinks:
     oddjob: "#{source_dir}"
