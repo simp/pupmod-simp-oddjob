@@ -1,3 +1,6 @@
+* Fri Dec 30 2022  oliparcol <oliparcol@noreply.github.com> - 2.3.1
+- Make sure oddjob-mkhomedir is installed before modifying configuration
+
 * Wed Jun 16 2021 Chris Tessmer <chris.tessmer@onyxpoint.com> - 2.3.0
 - Removed support for Puppet 5
 - Ensured support for Puppet 7 in requirements and stdlib
