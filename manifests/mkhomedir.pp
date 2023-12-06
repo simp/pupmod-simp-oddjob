@@ -18,7 +18,7 @@ class oddjob::mkhomedir (
     ensure => $package_ensure
   }
 
-  file { '/etc/oddjobd.conf.d/oddjobd-mkhomedir.conf':
+  -> file { '/etc/oddjobd.conf.d/oddjobd-mkhomedir.conf':
     owner   => 'root',
     group   => 'root',
     mode    => '0644',
