@@ -1,5 +1,22 @@
-* Fri Dec 30 2022  oliparcol <oliparcol@noreply.github.com> - 2.3.1
+* Fri Dec 06 2023  oliparcol <oliparcol@noreply.github.com> - 2.8.0
 - Make sure oddjob-mkhomedir is installed before modifying configuration
+
+* Mon Oct 23 2023 Steven Pritchard <steve@sicura.us> - 2.7.0
+- [puppetsync] Add EL9 support
+
+* Wed Oct 11 2023 Steven Pritchard <steve@sicura.us> - 2.6.0
+- [puppetsync] Updates for Puppet 8
+  - These updates may include the following:
+    - Update Gemfile
+    - Add support for Puppet 8
+    - Drop support for Puppet 6
+    - Update module dependencies
+
+* Wed Aug 23 2023 Steven Pritchard <steve@sicura.us> - 2.5.0
+- Add AlmaLinux 8 support
+
+* Mon Jun 12 2023 Chris Tessmer <chris.tessmer@onyxpoint.com> - 2.4.0
+- Add RockyLinux 8 support
 
 * Wed Jun 16 2021 Chris Tessmer <chris.tessmer@onyxpoint.com> - 2.3.0
 - Removed support for Puppet 5
