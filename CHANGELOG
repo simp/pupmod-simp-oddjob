@@ -1,4 +1,4 @@
-* Fri Dec 06 2023 oliparcol <oliparcol@noreply.github.com> - 2.8.0
+* Wed Dec 06 2023 oliparcol <oliparcol@noreply.github.com> - 2.8.0
 - Make sure oddjob-mkhomedir is installed before modifying configuration
 
 * Mon Oct 23 2023 Steven Pritchard <steve@sicura.us> - 2.7.0
