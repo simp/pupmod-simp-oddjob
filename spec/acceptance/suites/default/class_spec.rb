@@ -3,19 +3,19 @@ require 'spec_helper_acceptance'
 test_name 'oddjob class'
 
 describe 'oddjob class' do
-  let(:manifest) {
+  let(:manifest) do
     <<-EOS
       include '::oddjob'
     EOS
-  }
+  end
 
   context 'with defaults' do
-    it 'should work with no errors' do
-       apply_manifest(manifest, :catch_failures => true)
+    it 'works with no errors' do
+      apply_manifest(manifest, catch_failures: true)
     end
 
-    it 'should be idempotent' do
-       apply_manifest(manifest, :catch_changes => true)
+    it 'is idempotent' do
+      apply_manifest(manifest, catch_changes: true)
     end
 
     describe package('oddjob') do
