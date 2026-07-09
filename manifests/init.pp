@@ -9,7 +9,6 @@
 class oddjob (
   String $package_ensure = simplib::lookup('simp_options::package_ensure', { 'default_value' => 'installed' })
 ) {
-
   package { 'oddjob':
     ensure => $package_ensure
   }
