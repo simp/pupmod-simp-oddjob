@@ -62,8 +62,7 @@ The module has two classes, both public; there are no defines.
   the helper `exec` string in the template
   (`templates/etc/oddjobd.conf.d/oddjobd-mkhomedir.conf.erb`, `-u <%= @umask %>`).
 - **The template hard-codes the helper path** `/usr/libexec/oddjob/mkhomedir`
-  and the D-Bus service/interface name `com.redhat.oddjob_mkhomedir`
-  (`.erb:14,25,28,35`) — these are Red-Hat-family paths, consistent with the
+  and the D-Bus service/interface name `com.redhat.oddjob_mkhomedir` — these are Red-Hat-family paths, consistent with the
   EL-only OS matrix.
 - **`simp/simp_options` is NOT a declared dependency** in `metadata.json`, yet
   both manifests consume the `simp_options::package_ensure` seam via
