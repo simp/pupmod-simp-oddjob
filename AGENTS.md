@@ -8,10 +8,10 @@ This file provides guidance to AI agents when working with code in this reposito
 **OddJob** (`oddjobd`), the D-Bus service that lets unprivileged clients ask a
 privileged daemon to run a limited set of tasks on their behalf. The base class
 installs the `oddjob` package and ensures the `oddjobd` service is running and
-enabled (`manifests/init.pp:9-22`). The `oddjob::mkhomedir` class layers on the
+enabled (`manifests/init.pp`). The `oddjob::mkhomedir` class layers on the
 `oddjob-mkhomedir` helper — which creates users' home directories on first login
 — and drops the daemon config snippet that wires up the
-`com.redhat.oddjob_mkhomedir` D-Bus interface (`manifests/mkhomedir.pp:11-27`).
+`com.redhat.oddjob_mkhomedir` D-Bus interface (`manifests/mkhomedir.pp`).
 
 The module is a thin package/service/config wrapper: there is no SIMP feature
 seam beyond the standard `simp_options::package_ensure` lookup, and no
@@ -21,46 +21,46 @@ conditional OS logic in the manifests.
 
 The module has two classes, both public; there are no defines.
 
-- **`oddjob` (`manifests/init.pp:9-22`)** — Public entry class (not
+- **`oddjob` (`manifests/init.pp`)** — Public entry class (not
   `assert_private()`'d; consumers `include 'oddjob'`). Parameter
-  (`init.pp:9-11`):
+  (`init.pp`):
   - `$package_ensure` (`String`) — defaults to
     `simplib::lookup('simp_options::package_ensure', { 'default_value' => 'installed' })`
-    (`init.pp:10`).
+    (`init.pp`).
 
   Resources:
-  - `package { 'oddjob' }` at `$package_ensure` (`init.pp:13-15`).
+  - `package { 'oddjob' }` at `$package_ensure` (`init.pp`).
   - `service { 'oddjobd' }` — `ensure => 'running'`, `enable => true`,
-    `require => Package['oddjob']` (`init.pp:17-21`).
+    `require => Package['oddjob']` (`init.pp`).
 
-- **`oddjob::mkhomedir` (`manifests/mkhomedir.pp:11-27`)** — Public class (not
-  `assert_private()`'d). Parameters (`mkhomedir.pp:11-14`):
+- **`oddjob::mkhomedir` (`manifests/mkhomedir.pp`)** — Public class (not
+  `assert_private()`'d). Parameters (`mkhomedir.pp`):
   - `$umask` (`Simplib::Umask`, type from `simp/simplib`) — default `'0027'`;
     interpolated into the mkhomedir helper command in the config template
-    (`mkhomedir.pp:12`).
+    (`mkhomedir.pp`).
   - `$package_ensure` (`String`) — defaults to
     `simplib::lookup('simp_options::package_ensure', { 'default_value' => 'installed' })`
-    (`mkhomedir.pp:13`).
+    (`mkhomedir.pp`).
 
   Control flow and resources:
-  - `include 'oddjob'` (`mkhomedir.pp:15`) — pulls in the base package/service.
-  - `package { 'oddjob-mkhomedir' }` at `$package_ensure` (`mkhomedir.pp:17-19`),
+  - `include 'oddjob'` (`mkhomedir.pp`) — pulls in the base package/service.
+  - `package { 'oddjob-mkhomedir' }` at `$package_ensure` (`mkhomedir.pp`),
     chained with `->` to the config file so the package installs first.
-  - `file { '/etc/oddjobd.conf.d/oddjobd-mkhomedir.conf' }` (`mkhomedir.pp:21-27`)
+  - `file { '/etc/oddjobd.conf.d/oddjobd-mkhomedir.conf' }` (`mkhomedir.pp`)
     — mode `0644`, `notify => Service['oddjobd']` (defined in the base class),
     content rendered from
     `template('oddjob/etc/oddjobd.conf.d/oddjobd-mkhomedir.conf.erb')`.
 
 ### Gotchas / non-obvious details
 
-- **`oddjob::mkhomedir` implicitly `include`s `oddjob`** (`mkhomedir.pp:15`), so
+- **`oddjob::mkhomedir` implicitly `include`s `oddjob`** (`mkhomedir.pp`), so
   it can `notify` the base class's `Service['oddjobd']`. Do not declare
   `oddjob::mkhomedir` in a context where `oddjob` is declared with resource-like
   syntax elsewhere, or you'll get a duplicate-declaration conflict.
 - **`$umask` is not validated against the D-Bus config semantics — only against
-  the `Simplib::Umask` type** (`mkhomedir.pp:12`). It is injected verbatim into
+  the `Simplib::Umask` type** (`mkhomedir.pp`). It is injected verbatim into
   the helper `exec` string in the template
-  (`templates/etc/oddjobd.conf.d/oddjobd-mkhomedir.conf.erb:28,35`, `-u <%= @umask %>`).
+  (`templates/etc/oddjobd.conf.d/oddjobd-mkhomedir.conf.erb`, `-u <%= @umask %>`).
 - **The template hard-codes the helper path** `/usr/libexec/oddjob/mkhomedir`
   and the D-Bus service/interface name `com.redhat.oddjob_mkhomedir`
   (`.erb:14,25,28,35`) — these are Red-Hat-family paths, consistent with the
@@ -70,7 +70,7 @@ The module has two classes, both public; there are no defines.
   `simplib::lookup` (the function is provided by `simp/simplib`). `simp_options`
   is not even a fixture here — the `simplib::lookup` default keeps compilation
   working without it (`.fixtures.yml` lists only `simplib`).
-- **The service is always forced running/enabled** (`init.pp:17-21`); there is
+- **The service is always forced running/enabled** (`init.pp`); there is
   no parameter to disable or stop `oddjobd`. Managing `oddjob` means managing a
   running daemon.
 - **No `data/` or `hiera.yaml`** — unlike many SIMP modules, this one ships no
@@ -81,10 +81,10 @@ The module has two classes, both public; there are no defines.
 This is the module's only SIMP feature seam (the natural target for a
 lookup-path unit test):
 
-| Line | Key | `default_value` |
+| File | Key | `default_value` |
 |------|-----|-----------------|
-| `manifests/init.pp:10` | `simp_options::package_ensure` | `'installed'` |
-| `manifests/mkhomedir.pp:13` | `simp_options::package_ensure` | `'installed'` |
+| `manifests/init.pp` | `simp_options::package_ensure` | `'installed'` |
+| `manifests/mkhomedir.pp` | `simp_options::package_ensure` | `'installed'` |
 
 Keep routing SIMP feature toggles through `simplib::lookup('simp_options::*', {
 'default_value' => ... })` with an explicit default rather than assuming
