@@ -59,4 +59,3 @@ Data type: `String`
 The ensure status of packages to be managed
 
 Default value: `simplib::lookup('simp_options::package_ensure', { 'default_value' => 'installed' })`
-
